@@ -72,3 +72,53 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## Docker build image commands:
+
+#### api:
+```
+docker build -f Dockerfile.api -t react-flask-app-api .
+```
+
+#### client:
+```
+docker build -f Dockerfile.client -t react-flask-app-client .
+```
+
+## Docker run command:
+```
+docker-compose up
+```
+
+
+### Tutorials used to help:
+ - https://blog.miguelgrinberg.com/post/how-to-deploy-a-react--flask-project
+ - https://blog.miguelgrinberg.com/post/how-to-dockerize-a-react-flask-project
+
+
+## Set Up Python Environment for local development:
+
+0. Ensure python3 is using Python version `3.8.5` by running:
+```
+python3 --version
+```
+
+1. Navigate to `/api`
+
+2. Create a virtual environment and activate it by runnning the following two commands:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Upgrade pip to version `22.3` by running:
+```
+python3 -m pip install pip==22.3
+```
+
+4. Install `requirements.txt` by running:
+```
+pip install -r requirements.txt
+```

@@ -1,0 +1,9 @@
+FROM python:3.8.5
+WORKDIR /app
+
+COPY api/requirements.txt api/api.py api/.flaskenv ./
+RUN python -m pip install pip==22.3 && pip install -r ./requirements.txt
+ENV FLASK_DEBUG False
+
+EXPOSE 5000
+CMD ["gunicorn", "-b", ":5000", "api:app"]
